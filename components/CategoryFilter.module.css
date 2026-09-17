@@ -1,0 +1,136 @@
+/*
+ * CategoryFilter.module.css
+ * A CSS Module: these class names are automatically made unique at build
+ * time, so `.panel` here can never collide with a `.panel` written anywhere
+ * else in the project.
+ */
+
+.panel {
+  /* Sit on top of the map rather than pushing it aside. The map fills its
+     container, so the panel is positioned against that same container. */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  /* Leaflet's own controls (zoom buttons, attribution) use z-index values
+     up to 1000. Going above that keeps the panel clickable on top of them. */
+  z-index: 1100;
+
+  width: 15rem;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+
+  padding: 0.9rem 1rem;
+  border-radius: 0.6rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+}
+
+.heading {
+  margin: 0 0 0.15rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.count {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.row:hover {
+  color: #000;
+}
+
+.checkbox {
+  cursor: pointer;
+  accent-color: #333;
+}
+
+/* The small colour dot that matches this category's map pin, so the panel
+   doubles as a legend. Its background colour is set from JavaScript. */
+.swatch {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.label {
+  flex-grow: 1;
+}
+
+.tally {
+  color: #888;
+  font-size: 0.75rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.4rem;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 0.7rem;
+}
+
+.button {
+  flex: 1;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.35rem;
+  background: #f6f6f6;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+.button:hover {
+  background: #ebebeb;
+}
+
+/* ---------- Small screens ---------- */
+
+/*
+ * On a narrow phone a 15rem panel pinned to the corner covers most of the
+ * map. Below 30rem it becomes a shorter, full-width bar across the top so
+ * the map stays usable underneath it.
+ */
+@media (max-width: 30rem) {
+  .panel {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    width: auto;
+    max-height: 45vh;
+    padding: 0.7rem 0.8rem;
+  }
+
+  .list {
+    /* Two columns, so seven categories take four rows instead of seven. */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.35rem 0.6rem;
+  }
+}

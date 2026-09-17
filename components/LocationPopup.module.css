@@ -1,0 +1,50 @@
+/*
+ * LocationPopup.module.css
+ * Styles for the bubble that opens when a marker is clicked.
+ */
+
+.popup {
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  color: #1a1a1a;
+  max-width: 15rem;
+}
+
+.name {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* The coloured pill showing the category. Its background colour is set from
+   JavaScript using the same CATEGORY_COLORS values that colour the map pins,
+   so a popup can never show a colour the pin does not use. */
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.description {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #333;
+}
+
+.address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.3rem;
+  margin: 0.5rem 0 0;
+  padding-top: 0.45rem;
+  border-top: 1px solid #e8e8e8;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: #666;
+}
