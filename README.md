@@ -42,7 +42,8 @@ an anchor point, and learning how to structure location data so that adding a
 wanted to solve a genuine integration problem — running a browser-only mapping
 library inside a framework that renders on the server first.
 
-[Software Demo Video](http://youtube.link.goes.here)
+Software Demo Video: https://www.loom.com/share/c453b6504b3345eaa4178a4e4422561b
+
 
 # Development Environment
 
